@@ -117,8 +117,18 @@ def process_command(cmd, data):
             subs = sorted(set([e['name_value'] for e in r.json()]))[:20]
             return "**Subdomains:**\n" + "\n".join(subs) if subs else "❌ No subdomains found"
             
+                elif cmd == "WHOIS":
+            domain = data.replace("http://","").replace("https://","").split('/')[0].split(':')[0]
+            r = requests.get("https://api.hackertarget.com/whois/?q=" + domain, timeout=20)
+            return "📝 **WHOIS Info:**\n
+http://googleusercontent.com/immersive_entry_chip/0
+
+**Sothik code (Okhane eta bosiye din):**
+```python
         elif cmd == "WHOIS":
             domain = data.replace("http://","").replace("https://","").split('/')[0].split(':')[0]
             r = requests.get("https://api.hackertarget.com/whois/?q=" + domain, timeout=20)
             return "📝 **WHOIS Info:**\n
-htt
+http://googleusercontent.com/immersive_entry_chip/1
+
+
