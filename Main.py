@@ -116,7 +116,4 @@ def process_command(cmd, data):
             if r.status_code != 200 or not r.text: return "❌ No subdomains found or API blocked."
             subs = sorted(set([e['name_value'] for e in r.json()]))[:20]
             return "**Subdomains:**\n" + "\n".join(subs) if subs else "❌ No subdomains found"
-            
-        elif cmd == "WHOIS":
-            domain = data.replace("http://","").replace("https://","").split('/')[0].split(':')[0]
-            r = requests.get("https://api.hackertarget.com/whois/?q=" + domain, timeout
+    
