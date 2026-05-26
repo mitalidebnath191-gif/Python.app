@@ -120,4 +120,4 @@ def process_command(cmd, data):
         elif cmd == "WHOIS":
             domain = data.replace("http://","").replace("https://","").split('/')[0].split(':')[0]
             r = requests.get("https://api.hackertarget.com/whois/?q=" + domain, timeout=20)
-            return 📝 **WHOIS Info:**\n
+            return  **WHOIS Info:**\n
