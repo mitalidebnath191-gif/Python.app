@@ -116,4 +116,3 @@ def process_command(cmd, data):
             if r.status_code != 200 or not r.text: return "❌ No subdomains found or API blocked."
             subs = sorted(set([e['name_value'] for e in r.json()]))[:20]
             return "**Subdomains:**\n" + "\n".join(subs) if subs else "❌ No subdomains found"
-    
